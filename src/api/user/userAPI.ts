@@ -5,7 +5,7 @@ import { loadTokenAPI } from "@/utils/mainUtils";
 export const getMembroInfoService = async (token: string | null) => {
   try {
     const response = await api(
-      `/membros/perfil/token/${token?.replace("Bearer ", "")}`,
+      `/public/user/profile/token/${token}`,
       {
         headers: {
           Authorization: token,

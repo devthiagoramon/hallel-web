@@ -53,18 +53,18 @@ const CarouselEvents = () => {
                 {events?.map((item) => (
                     <SwiperSlide key={item.id}>
                         <DivItem onClick={() => handleDetailsEvent(item.id)}>
-                            {item.fileImageUrl ? (
+                            {item.image_url ? (
                                 <ImageItem
-                                    src={item.fileImageUrl}
-                                    alt={`evento-${item.titulo}-image`}
+                                    src={item.image_url}
+                                    alt={`evento-${item.title}-image`}
                                 />
                             ) : (
                                 <ImageItem
                                     src={SemImagemEvento}
-                                    alt={`sem-imagem-${item.titulo}`}
+                                    alt={`sem-imagem-${item.title}`}
                                 />
                             )}
-                            <TitleEvents>{item.titulo}</TitleEvents>
+                            <TitleEvents>{item.title}</TitleEvents>
                         </DivItem>
                     </SwiperSlide>
                 ))}

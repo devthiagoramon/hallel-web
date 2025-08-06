@@ -6,7 +6,7 @@ export const listEventsAscAdmService = async (): Promise<
   ListEventsAdmDTO[] | undefined
 > => {
   try {
-    const response = await api.get("/administrador/eventos/asc", {
+    const response = await api.get("/public/event/list-all/title/asc", {
       headers: {
         Authorization: loadTokenAPI(),
       },
@@ -21,7 +21,7 @@ export const listEventsAscAdmService = async (): Promise<
 export const adicionarEventAdmService = async (data: FormData) => {
   try {
     const response = await api.post(
-      "/administrador/eventos/create",
+      "/admin/event/create",
       data,
       {
         headers: {
@@ -42,7 +42,7 @@ export const editarEventAdmService = async (
 ) => {
   try {
     const response = await api.patch(
-      `/administrador/eventos/${idEvento}/edit`,
+      `/admin/event/edit/${idEvento}`,
       dto,
       {
         headers: {

@@ -4,10 +4,10 @@ export interface ReduxUser {
   id: string;
   name: string;
   email: string;
-  photo: string;
+  fileImageUrl: string;
   cpf: string;
-  dataNascimento: string;
-  telefone: string;
+  dateBirth: string;
+  phoneNumber: string;
 }
 
 export interface ReduxAdmDonation {

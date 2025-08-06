@@ -1,6 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IconButton, Tooltip } from "@mui/material";
-import { signInService } from "@/api/main/mainAPI";
+import { getUserInfosByTokenService, signInService } from "@/api/main/mainAPI";
 import ButtonH from "@/components/ButtonH";
 import LinkH from "@/components/LinkH";
 import TextFieldH from "@/components/TextFieldH";
@@ -15,15 +15,18 @@ import type { SignInDTO } from "@/types/dtoTypes";
 import * as yup from "yup";
 import HallelLogoHD from "../../assets/logoHallelHD.png";
 import { FormContainer, LogoContainer, SignContainer } from "./style";
+import { saveTokenAPI } from "@/utils/mainUtils";
+import { saveUserInfoRedux } from "@/store/userSlice";
+import { useDispatch } from "react-redux";
 
 const schema = yup.object({
-  nome: yup.string().required("Digite o seu nome!").trim(),
+  name: yup.string().required("Digite o seu nome!").trim(),
   email: yup
     .string()
     .email("Digite um e-mail válido!")
     .required("Digite um e-mail!").trim(),
-  senha: yup.string().required("Digite uma senha!").trim(),
-  confirmarSenha: yup.string().required("Confirme a sua senha!").trim(),
+  password: yup.string().required("Digite uma senha!").trim(),
+  confirmPassword: yup.string().required("Confirme a sua senha!").trim(),
 }).required();
 
 const SignIn = () => {
@@ -34,6 +37,7 @@ const SignIn = () => {
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
   const { enqueueSnackbar } = useSnackbar()
+  const dispatch = useDispatch();
 
   const handleGoBack = () => {
     navigator(-1);
@@ -44,17 +48,21 @@ const SignIn = () => {
   const handleShowConfirmPassword = () => { setShowConfirmPassword(!showConfirmPassword) };
 
   const onSubmit = async (data: SignInDTO) => {
-    if (data.senha !== data.confirmarSenha) {
+    if (data.password !== data.confirmPassword) {
       enqueueSnackbar("Senhas incompatíveis!", { variant: "error" })
       return
     }
     try {
       const response = await signInService(data)
-      const token = response.token
-      const user = response.objeto
-      console.log(response)
+      const token = response.accessToken
+      saveTokenAPI(token);
+      const responseUser = await getUserInfosByTokenService(response.accessToken);
+      dispatch(saveUserInfoRedux(responseUser));
+      enqueueSnackbar("Cadastro realizado com sucesso!", {variant: "success"})
+      navigator("/");
     } catch (error) {
-      console.error("Can't sign in")
+      console.error("Can't sign in", error)
+      enqueueSnackbar("Erro: Não foi possivel realizar o cadastro", {variant: "error"})
     }
   }
 
@@ -82,7 +90,7 @@ const SignIn = () => {
         <main>
           <TextFieldH
             inputProps={{
-              ...register("nome"),
+              ...register("name"),
             }}
             type="outlined"
             label="Nome: "
@@ -106,7 +114,7 @@ const SignIn = () => {
             type="outlined"
             label="Senha"
             inputProps={{
-              ...register("senha"),
+              ...register("password"),
               type: showPassword ? "text" : "password"
             }}
           />
@@ -122,7 +130,7 @@ const SignIn = () => {
             type="outlined"
             label="Confirmar senha"
             inputProps={{
-              ...register("confirmarSenha"),
+              ...register("confirmPassword"),
               type: showConfirmPassword ? "text" : "password"
             }}
           />

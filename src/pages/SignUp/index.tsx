@@ -5,7 +5,7 @@ import {
   IconButton,
   Tooltip,
 } from "@mui/material";
-import { signUpService } from "@/api/main/mainAPI";
+import { getUserInfosByTokenService, signUpService } from "@/api/main/mainAPI";
 import ButtonH from "@/components/ButtonH";
 import LinkH from "@/components/LinkH";
 import TextFieldH from "@/components/TextFieldH";
@@ -35,7 +35,7 @@ const schema = yup
       .email("Digite um e-mail válido!")
       .required("Digite um e-mail!")
       .trim(),
-    senha: yup.string().required("Digite a tua senha!").trim(),
+    password: yup.string().required("Digite a tua senha!").trim(),
   })
   .required();
 
@@ -63,8 +63,10 @@ const SignUp = () => {
   const onSubmit = async (data: SignUpDTO) => {
     try {
       const response = await signUpService(data);
-      saveTokenAPI(response.token);
-      dispatch(saveUserInfoRedux(response.objeto));
+      saveTokenAPI(response.accessToken);
+      const responseUser = await getUserInfosByTokenService(response.accessToken);
+      dispatch(saveUserInfoRedux(responseUser));
+      enqueueSnackbar("Login realizado com sucesso!", {variant: "success"})
       navigator("/");
     } catch (error: any) {
       console.error("Can't sing up");
@@ -112,7 +114,7 @@ const SignUp = () => {
             type="outlined"
             label="Senha"
             inputProps={{
-              ...register("senha"),
+              ...register("password"),
               type: showPassword ? "text" : "password",
             }}
           />

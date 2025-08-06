@@ -42,10 +42,10 @@ const PersonalInfos = () => {
             nome: user.name,
             email: user.email,
             cpf: formatarCPF(user.cpf),
-            dataNascimento: user.dataNascimento
-                ? dayjs(user.dataNascimento).format("YYYY-MM-DD")
+            dataNascimento: user.dateBirth
+                ? dayjs(user.dateBirth).format("YYYY-MM-DD")
                 : null,
-            telefone: formatarTelefone(user.telefone),
+            telefone: formatarTelefone(user.phoneNumber),
         },
         resolver: yupResolver(schema),
     });
@@ -53,11 +53,11 @@ const PersonalInfos = () => {
     const onSubmitHandler = async (data: any) => {
         const dto: EditProfileDTO = {
             ...data,
-            dataNascimento: dayjs(data.dataNascimento).toDate(),
+            dateBirth: dayjs(data.dataNascimento).toDate(),
             cpf: data.cpf && data.cpf.replace(/\D/g, ""),
-            telefone: data.telefone && data.telefone.replace(/\D/g, ""),
+            phoneNumber: data.telefone && data.telefone.replace(/\D/g, ""),
             id: user.id,
-            image: selectedImage ? selectedImage : user.photo,
+            image: selectedImage ? selectedImage : user.fileImageUrl,
         };
 
         try {
@@ -97,12 +97,12 @@ const PersonalInfos = () => {
             setValue("cpf", formatarCPF(user.cpf));
             setValue(
                 "dataNascimento",
-                user.dataNascimento
-                    ? dayjs(user.dataNascimento).format("YYYY-MM-DD")
+                user.dateBirth
+                    ? dayjs(user.dateBirth).format("YYYY-MM-DD")
                     : null,
             );
             setValue("email", user.email);
-            setValue("telefone", formatarTelefone(user.telefone));
+            setValue("telefone", formatarTelefone(user.phoneNumber));
         }
     }, [user]);
 

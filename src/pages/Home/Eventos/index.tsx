@@ -24,7 +24,7 @@ const Eventos = () => {
     const eventosFiltered = useMemo(() => {
         const text = searchText.toLowerCase();
         return eventos?.filter((evento) =>
-            evento.titulo.toLowerCase().includes(text),
+            evento.title.toLowerCase().includes(text),
         );
     }, [eventos, searchText]);
 

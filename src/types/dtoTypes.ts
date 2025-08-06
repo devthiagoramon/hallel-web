@@ -3,14 +3,14 @@ import type { ReduxUser } from "./reduxTypes";
 
 export interface SignInDTO {
   email: string;
-  senha: string;
-  confirmarSenha: string;
-  nome: string;
+  password: string;
+  confirmPassword: string;
+  name: string;
 }
 
 export interface SignUpDTO {
   email: string;
-  senha: string;
+  password: string;
 }
 
 export interface EditProfileDTO extends ReduxUser {
@@ -19,10 +19,12 @@ export interface EditProfileDTO extends ReduxUser {
 
 export interface ListEventsDTO {
   id: string;
-  titulo: string;
-  date: Date;
-  localEvento?: LocalEvento;
-  fileImageUrl: string;
+  title: string;
+  date: string;
+  local_event_name: string;
+  local_event_longitude: number;
+  local_event_latitude: number;
+  image_url: string;
 }
 
 export interface ListSorteadosDTO {
@@ -55,4 +57,16 @@ export interface EventDTO {
   valorDescontoAssociado: null;
   valorDescontoMembro: null;
   banner?: string | null;
+}
+
+export interface UserProfileInfos{
+  id: string,
+  name: string,
+  email: string,
+  phoneNumber: string,
+  dateBirth: Date,
+  fileImageUrl: string,
+  cpf: string,
+  date_view: string,
+  last_access: string
 }

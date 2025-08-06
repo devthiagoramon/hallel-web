@@ -6,7 +6,6 @@ export const EventosContainer = styled.main`
   height: 100%;
   grid-template-columns: 100%;
   grid-template-rows: 175px 100%;
-  margin-bottom: 15rem;
 `;
 
 export const HeaderEventosContainer = styled.header`
@@ -95,12 +94,13 @@ export const BodyEventosContainer = styled.div`
   margin-top: 30px;
   background-color: ${(props) => props.theme.mainColors.backgroundGrey};
   min-height: 60vh;
-  height: 100%;
+
   width: 96%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  column-gap: 60px;
+  column-gap: 2rem;
+  row-gap: 2rem;
 
   @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);

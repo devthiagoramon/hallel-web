@@ -6,7 +6,7 @@ export const listEventsPublicService = async (): Promise<
   ListEventsDTO[] | undefined
 > => {
   try {
-    const response = await api.get("/public/home/eventos/listar");
+    const response = await api.get("/public/event/list-all/title/asc");
     return response.data;
   } catch (error) {
     console.error("Can't get events public from API");
@@ -17,7 +17,7 @@ export const listEventsService = async (): Promise<
   ListEventsDTO[] | undefined
 > => {
   try {
-    const response = await api.get("/eventos", {
+    const response = await api.get("/public/event/list-all/title/asc", {
       headers: {
         Authorization: loadTokenAPI(),
       },
