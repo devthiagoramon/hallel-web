@@ -1,5 +1,5 @@
 import SelectImageH from "@/components/SelectImageH";
-import { Dispatch, HTMLProps, SetStateAction } from "react";
+import  type { Dispatch, HTMLProps, SetStateAction } from "react";
 import { type CSSProperties } from "styled-components";
 import { TextFieldHContainer } from "../style";
 

@@ -16,11 +16,11 @@ import { useNavigate } from "react-router-dom";
 import {
     selectSelectedDonationObjectRedux
 } from "@/store/admDonationSlice";
-import { CriarEditarDoacaoDTO } from "@/types/admDTOTypes";
+import type { CriarEditarDoacaoDTO } from "@/types/admDTOTypes";
 import {
     StatusDoacao,
-    TipoDoacaoAdm,
-    TipoDoadoresAdm,
+    type TipoDoacaoAdm,
+    type TipoDoadoresAdm,
 } from "@/types/admTypes";
 import {
     maskForValueInReal,

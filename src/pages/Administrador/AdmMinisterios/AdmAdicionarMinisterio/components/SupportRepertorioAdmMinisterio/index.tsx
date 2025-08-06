@@ -1,5 +1,5 @@
 import { Switch } from "@mui/material";
-import { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import {
     SupportAdmMinisterioContainer,
     SupportAdmMinisterioLabel,

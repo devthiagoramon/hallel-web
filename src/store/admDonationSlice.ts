@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ListDoacaoDTO } from "@/types/admDTOTypes";
-import { ReduxStore } from "@/types/reduxTypes";
+import type { ListDoacaoDTO } from "@/types/admDTOTypes";
+import type { ReduxStore } from "@/types/reduxTypes";
 
 const selectedDonation: ListDoacaoDTO | undefined = undefined;
 

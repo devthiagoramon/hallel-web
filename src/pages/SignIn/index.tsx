@@ -11,7 +11,7 @@ import { CaretLeft, Eye, EyeSlash } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { SignInDTO } from "@/types/dtoTypes";
+import type { SignInDTO } from "@/types/dtoTypes";
 import * as yup from "yup";
 import HallelLogoHD from "../../assets/logoHallelHD.png";
 import { FormContainer, LogoContainer, SignContainer } from "./style";

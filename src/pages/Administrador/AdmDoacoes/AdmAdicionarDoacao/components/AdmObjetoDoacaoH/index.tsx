@@ -1,7 +1,8 @@
 import { Button, Divider, IconButton, Tooltip } from "@mui/material";
 import { Pencil, Plus, Trash } from "phosphor-react";
-import { Dispatch, ReactNode, SetStateAction, useState } from "react";
-import { DoacaoObjetoDTO } from "@/types/admDTOTypes";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+import {useState} from "react";
+import type { DoacaoObjetoDTO } from "@/types/admDTOTypes";
 import AddEditObjetoDoacaoModalH from "./AddEditObjetoDoacaoModalH";
 import {
     AdmObjetoDoacaoHContainer,

@@ -1,6 +1,6 @@
 import AdmMenuRoutes from "@/components/AdmMenuRoutes";
 import AdmSideBar from "@/components/AdmSideBar";
-import { ReactNode, useState } from "react";
+import { type ReactNode, useState } from "react";
 import { AdmWrapperContainer, AdmWrapperContent } from "./style";
 
 const AdmWrapper = ({ children }: { children: ReactNode }) => {

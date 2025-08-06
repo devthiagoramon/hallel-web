@@ -1,5 +1,5 @@
 import api from "@/api/api";
-import {
+import type {
   CriarEditarDoacaoDTO,
   ListDoacaoDTO,
 } from "@/types/admDTOTypes";

@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "phosphor-react";
-import { ListEventsDTO } from "@/types/dtoTypes";
+import type { ListEventsDTO } from "@/types/dtoTypes";
 import { CardEventContainer } from "./style";
 
 interface CardEventProps {

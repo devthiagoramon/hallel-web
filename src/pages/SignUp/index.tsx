@@ -23,7 +23,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { saveUserInfoRedux } from "@/store/userSlice";
-import { SignUpDTO } from "@/types/dtoTypes";
+import type { SignUpDTO } from "@/types/dtoTypes";
 import { saveTokenAPI } from "@/utils/mainUtils";
 import * as yup from "yup";
 import HallelLogoHD from "../../assets/logoHallelHD.png";

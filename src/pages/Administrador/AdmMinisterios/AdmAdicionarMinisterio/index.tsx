@@ -12,7 +12,7 @@ import AdmHeaderH from "@/pages/Administrador/components/AdmHeaderH";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import {
+import type {
     MembroResponseListDTO,
     MinisterioAdmDTOV2
 } from "@/types/admDTOTypes";

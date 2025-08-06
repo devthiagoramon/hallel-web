@@ -10,7 +10,7 @@ import {
     listDoacaoPendentes,
 } from "@/api/admin/doacao/admDoacaoAPI";
 import { ADM_QUERIES } from "@/hooks/queryConsts";
-import { FiltersDonations } from "@/pages/Administrador/AdmDoacoes";
+import type { FiltersDonations } from "@/pages/Administrador/AdmDoacoes";
 
 export const useListDoacaoAdm = (filter: FiltersDonations) => {
     return useQuery({

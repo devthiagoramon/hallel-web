@@ -1,7 +1,7 @@
 import { IconButton } from "@mui/material";
 import TitleH from "@/components/TitleH";
 import { CaretLeft } from "phosphor-react";
-import { HTMLProps } from "react";
+import type { HTMLProps } from "react";
 import { useNavigate } from "react-router-dom";
 import { AdmHeaderContainer } from "./style";
 

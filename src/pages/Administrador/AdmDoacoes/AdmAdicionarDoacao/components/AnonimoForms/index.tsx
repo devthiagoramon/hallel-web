@@ -1,11 +1,11 @@
 import { TextField } from "@mui/material";
-import {
+import type {
     FieldErrors,
     UseFormRegister,
     UseFormSetValue,
 } from "react-hook-form";
 import { formatarTelefone } from "@/utils/masks";
-import { FormDoacao } from "../..";
+import type { FormDoacao } from "../..";
 import { AnonimoFormsContainer } from "./style";
 
 interface AnonimoFormsProps {

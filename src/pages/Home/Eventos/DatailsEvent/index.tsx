@@ -1,7 +1,7 @@
 import { getDetailsEvent } from "@/api/events/eventsAPI"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import { EventDTO } from "@/types/dtoTypes"
+import type { EventDTO } from "@/types/dtoTypes"
 import { ContainerDetailsEvent, ContainerHeaderDetailsEvents, ContainerImages, ContainerInfosHeaderDetails, ContainerToParticipate, ImageBanner, ImageEvent } from "./styles"
 import Banner from "../../../../assets/BannerNoEvents.png"
 import NotEvent from "../../../../assets/not_found_image_evento1.png"

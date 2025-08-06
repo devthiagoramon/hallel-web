@@ -1,5 +1,5 @@
 import api from "@/api/api";
-import { SignInDTO, SignUpDTO } from "@/types/dtoTypes";
+import type { SignInDTO, SignUpDTO } from "@/types/dtoTypes";
 import { loadTokenAPI } from "@/utils/mainUtils";
 
 export const signInService = async (dto: SignInDTO) => {

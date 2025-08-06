@@ -13,7 +13,7 @@ import {
     saveUserInfoRedux,
     selectUser,
 } from "@/store/userSlice";
-import { EditProfileDTO } from "@/types/dtoTypes";
+import type { EditProfileDTO } from "@/types/dtoTypes";
 import { formatarCPF, formatarTelefone } from "@/utils/masks";
 import * as yup from "yup";
 import { PersonalInfosContainer } from "./style";

@@ -1,8 +1,8 @@
-import { Checkbox, ModalProps, Skeleton } from "@mui/material";
+import { Checkbox, type ModalProps, Skeleton } from "@mui/material";
 import ModalH from "@/components/ModalH";
 import useListMinisteriosAdm from "@/hooks/admin/useListMinisteriosAdm";
-import { Dispatch, SetStateAction } from "react";
-import { ListMinisterioDTO } from "@/types/admDTOTypes";
+import type { Dispatch, SetStateAction } from "react";
+import type { ListMinisterioDTO } from "@/types/admDTOTypes";
 import {
     ModalSelecionarMinisterioContainer,
     ModalSelecionarMinisterioItem,

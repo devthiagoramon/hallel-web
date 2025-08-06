@@ -1,6 +1,6 @@
 import { Tooltip } from "@mui/material";
 import ProfilesPhoto from "@/components/ProfilesPhoto";
-import { ListSorteadosDTO } from "@/types/dtoTypes";
+import type { ListSorteadosDTO } from "@/types/dtoTypes";
 import { truncateText } from "@/utils/mainUtils";
 import { SorteadoCompContainer } from "./style";
 

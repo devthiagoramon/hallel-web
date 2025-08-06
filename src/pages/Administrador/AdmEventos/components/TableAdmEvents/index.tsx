@@ -1,5 +1,5 @@
 import { IconButton, Tooltip } from "@mui/material";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 import { useQueryClient } from "@tanstack/react-query";
 import { deleteEventAdmService } from "@/api/admin/eventos/eventosAdmAPI";
 import DeleteModalH from "@/components/DeleteModalH";
@@ -10,8 +10,8 @@ import { useSnackbar } from "notistack";
 import { PencilSimple, TrashSimple } from "phosphor-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ListEventsAdmDTO } from "@/types/admDTOTypes";
-import { LocalEvento } from "@/types/hallelTypes";
+import type { ListEventsAdmDTO } from "@/types/admDTOTypes";
+import type { LocalEvento } from "@/types/hallelTypes";
 import { ActionsTableContainer, RowTextComponent } from "./style";
 
 interface TableAdmEventsProps {

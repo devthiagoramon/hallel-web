@@ -1,5 +1,5 @@
 import api from "@/api/api";
-import { MembroResponseListDTO } from "@/types/admDTOTypes";
+import type { MembroResponseListDTO } from "@/types/admDTOTypes";
 import { loadTokenAPI } from "@/utils/mainUtils";
 
 export const listMembrosAdmService = async (

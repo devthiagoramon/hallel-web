@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { MapPin } from "phosphor-react";
-import { ListEventsDTO } from "@/types/dtoTypes";
+import type { ListEventsDTO } from "@/types/dtoTypes";
 import SemImagemEvento from "../../../../../assets/Sem_imagem_eventos_Hallel.png";
 import {
     CardEventosContainer,

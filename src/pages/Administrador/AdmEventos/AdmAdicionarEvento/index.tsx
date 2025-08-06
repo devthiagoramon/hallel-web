@@ -14,7 +14,7 @@ import { CaretLeft, List, Trash } from "phosphor-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import {
+import type {
     AddEditEventAdmDTO,
     ListMinisterioDTO,
     LocationMapType,

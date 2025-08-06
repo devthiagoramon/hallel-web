@@ -1,8 +1,8 @@
-import { Button, ModalProps, TextField } from "@mui/material";
+import { Button, type ModalProps, TextField } from "@mui/material";
 import ModalH from "@/components/ModalH";
 import { useSnackbar } from "notistack";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { DoacaoObjetoDTO } from "@/types/admDTOTypes";
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
+import type { DoacaoObjetoDTO } from "@/types/admDTOTypes";
 import { maskForNumber } from "@/utils/masks";
 
 interface AddEditObjetoDoacaoModalHProps extends ModalProps {

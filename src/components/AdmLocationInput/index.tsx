@@ -26,7 +26,7 @@ interface AdmLocationInputProps {
 const libraries: Libraries = ["places"];
 
 const LOCALIZATION_TOKEN =
-  process.env.REACT_GOOGLE_LOCALIZATION_API_KEY;
+  import.meta.env.VITE_GOOGLE_LOCALIZATION_API_KEY;
 
 const AdmLocationInput = ({
   containerStyle,

@@ -4,7 +4,7 @@ import {
     Menu,
     MenuItem,
 } from "@mui/material";
-import {
+import type {
     GridColDef,
     GridRowParams,
     MuiEvent,
@@ -17,8 +17,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { startEditDonationAdmRedux } from "@/store/admDonationSlice";
-import { CriarEditarDoacaoDTO } from "@/types/admDTOTypes";
-import { FiltersDonations } from "../..";
+import type { CriarEditarDoacaoDTO } from "@/types/admDTOTypes";
+import type { FiltersDonations } from "../..";
 
 interface TableDoacoesAdmProps {
     filter: FiltersDonations;

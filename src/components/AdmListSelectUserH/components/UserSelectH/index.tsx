@@ -1,6 +1,6 @@
 import ProfilesPhoto from "@/components/ProfilesPhoto";
-import { HTMLProps } from "react";
-import { MembroResponseListDTO } from "@/types/admDTOTypes";
+import type { HTMLProps } from "react";
+import type { MembroResponseListDTO } from "@/types/admDTOTypes";
 import { UserSelectHContainer } from "./style";
 
 interface UserSelectHProps extends HTMLProps<HTMLDivElement> {

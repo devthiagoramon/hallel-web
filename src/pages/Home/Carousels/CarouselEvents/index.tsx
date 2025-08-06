@@ -1,10 +1,6 @@
-import { useListEvents } from 'hooks/useListEvents';
+import { useListEvents } from '@/hooks/useListEvents';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SemImagemEvento from "../../../../assets/not_found_image_evento1.png";

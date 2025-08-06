@@ -9,7 +9,7 @@ import {
     useState,
 } from "react";
 import { type CSSProperties } from "styled-components";
-import { MembroResponseListDTO } from "@/types/admDTOTypes";
+import type { MembroResponseListDTO } from "@/types/admDTOTypes";
 import UserSelectH from "./components/UserSelectH";
 import { AdmListSelectUserHContainer } from "./style";
 

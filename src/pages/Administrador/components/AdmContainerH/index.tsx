@@ -1,4 +1,4 @@
-import { HTMLProps } from "react";
+import type { HTMLProps } from "react";
 import { AdmContainer } from "./style";
 
 interface AdmContainerHProps extends HTMLProps<HTMLDivElement> { }

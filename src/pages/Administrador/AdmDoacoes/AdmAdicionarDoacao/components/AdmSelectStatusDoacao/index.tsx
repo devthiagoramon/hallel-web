@@ -3,7 +3,7 @@ import {
     InputLabel,
     MenuItem,
     Select,
-    SelectProps,
+    type SelectProps,
 } from "@mui/material";
 import { StatusDoacao } from "@/types/admTypes";
 

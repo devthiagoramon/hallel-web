@@ -12,14 +12,14 @@ import AdmHeaderH from "@/pages/Administrador/components/AdmHeaderH";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import {
+import  type{
     CriarEditarDoacaoDTO,
     DoacaoObjetoDTO,
 } from "@/types/admDTOTypes";
-import {
+import  {
     StatusDoacao,
-    TipoDoacaoAdm,
-    TipoDoadoresAdm,
+    type TipoDoacaoAdm,
+    type TipoDoadoresAdm,
 } from "@/types/admTypes";
 import { maskForValueInReal, transformToNumber } from "@/utils/masks";
 import * as yup from "yup";

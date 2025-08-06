@@ -1,7 +1,8 @@
 import Textarea from "@mui/joy/Textarea";
 import { IconButton, Tooltip } from "@mui/material";
 import { Plus, Trash, Warning } from "phosphor-react";
-import { Dispatch, SetStateAction, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import {useState} from "react";
 import {
   BodyObjetivosAdmMinisterio,
   ContainerObjetivosAdmMinisterio,

@@ -1,5 +1,5 @@
 import { IconButton, Tooltip } from "@mui/material";
-import { GridColDef } from "@mui/x-data-grid";
+import type { GridColDef } from "@mui/x-data-grid";
 import { useQueryClient } from "@tanstack/react-query";
 import { deleteMinisterioAdmService } from "@/api/admin/ministerios/admMinisterioAPI";
 import AdmTableH from "@/components/AdmTableH";
@@ -11,7 +11,7 @@ import { ActionsTableContainer } from "@/pages/Administrador/AdmEventos/componen
 import { PencilSimple, TrashSimple } from "phosphor-react";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ListMinisterioDTO } from "@/types/admDTOTypes";
+import type { ListMinisterioDTO } from "@/types/admDTOTypes";
 
 interface TableMinisterioAdmProps {
     searchText?: string;

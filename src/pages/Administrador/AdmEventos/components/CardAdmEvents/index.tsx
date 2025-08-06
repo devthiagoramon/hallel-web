@@ -1,8 +1,8 @@
 import { Empty } from "@phosphor-icons/react";
 import TitleH from "@/components/TitleH";
 import CardEventos from "@/pages/Home/Eventos/components/CardEventos";
-import { ListEventsAdmDTO } from "@/types/admDTOTypes";
-import { ListEventsDTO } from "@/types/dtoTypes";
+import type { ListEventsAdmDTO } from "@/types/admDTOTypes";
+import type { ListEventsDTO } from "@/types/dtoTypes";
 import {
     CardAdmEventsContainer,
     CardAdmEventsNotFoundContainer,

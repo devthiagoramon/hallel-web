@@ -1,5 +1,5 @@
 import api from "@/api/api";
-import { LoginAdmDTO } from "@/types/admDTOTypes";
+import type { LoginAdmDTO } from "@/types/admDTOTypes";
 
 export const loginAdmService = async (dto: LoginAdmDTO) => {
   try {

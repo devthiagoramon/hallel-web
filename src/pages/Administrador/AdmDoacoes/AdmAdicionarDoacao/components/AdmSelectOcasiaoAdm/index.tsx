@@ -3,9 +3,9 @@ import {
     InputLabel,
     MenuItem,
     Select,
-    SelectProps,
+    type SelectProps,
 } from "@mui/material";
-import { TipoDoadoresAdm } from "@/types/admTypes";
+import type { TipoDoadoresAdm } from "@/types/admTypes";
 
 interface AdmSelectOcasiaoDoacaoAdmProps {
     onSelect: (tipo: TipoDoadoresAdm) => void;

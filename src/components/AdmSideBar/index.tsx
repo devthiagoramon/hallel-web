@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import type { Dispatch, SetStateAction} from "react";
+import {useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoHallel from "../../assets/logoHallelHD.png";
 import { admRoutesObj } from "./admRouteObj";
@@ -13,7 +14,7 @@ interface AdmSideBarProps {
     setExpanded: Dispatch<SetStateAction<boolean>>;
 }
 
-const AdmSideBar = ({ expanded, setExpanded }: AdmSideBarProps) => {
+const AdmSideBar = (props: AdmSideBarProps) => {
     const [actualPath, setActualPath] = useState<string>("");
     const navigation = useNavigate();
 

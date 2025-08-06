@@ -2,7 +2,7 @@ import { CalendarDots } from "@phosphor-icons/react";
 import TitleH from "@/components/TitleH";
 import dayjs, { Dayjs } from "dayjs";
 import { useState } from "react";
-import { ListSorteadosDTO } from "@/types/dtoTypes";
+import type { ListSorteadosDTO } from "@/types/dtoTypes";
 import BannerSorteio from "../../../assets/Banner Sorteio - Hallel.png";
 import SemImageUltimosGanhadores from "../../../assets/Sem imagem ganhadores sorteio - Hallel.png";
 import SorteadosComp from "./components/SorteadosComp";

@@ -1,5 +1,5 @@
 import api from "@/api/api";
-import { ListEventsAdmDTO } from "@/types/admDTOTypes";
+import type { ListEventsAdmDTO } from "@/types/admDTOTypes";
 import { loadTokenAPI } from "@/utils/mainUtils";
 
 export const listEventsAscAdmService = async (): Promise<

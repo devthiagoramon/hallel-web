@@ -1,5 +1,5 @@
 import api from "@/api/api";
-import { EditProfileDTO } from "@/types/dtoTypes";
+import type { EditProfileDTO } from "@/types/dtoTypes";
 import { loadTokenAPI } from "@/utils/mainUtils";
 
 export const getMembroInfoService = async (token: string | null) => {
