@@ -1,5 +1,5 @@
-import { StatusDoacao } from "./admTypes";
-import type { LocalEvento } from "./hallelTypes";
+import type { StatusDoacao } from "./admTypes";
+import  type{ LocalEvento } from "./hallelTypes";
 
 export interface LoginAdmDTO {
   email: string;

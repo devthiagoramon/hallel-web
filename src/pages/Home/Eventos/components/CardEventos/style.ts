@@ -6,6 +6,7 @@ export const CardEventosContainer = styled.div`
   max-width: 300px;
   max-height: 370px;
   border-radius: 1rem;
+  border: 2px solid ${({theme}) => theme.mainColors.border};
 
   background-color: transparent;
 

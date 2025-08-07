@@ -17,7 +17,7 @@ export const SectionItens = styled.section`
 
   p {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     width: 70%;
   }
@@ -42,6 +42,5 @@ export const SectionMessage = styled.section`
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
-    margin-left: 30px;
   }
 `;

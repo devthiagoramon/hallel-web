@@ -1,14 +1,16 @@
-import { IconButton } from "@mui/material";
-import { MenuHeader } from "@szhsin/react-menu";
-import MenuH from "@/components/MenuH";
 import UserPhoto from "@/components/UserPhoto";
+import { IconButton } from "@mui/material";
+import { Menu, MenuHeader } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/index.css";
 import MembroMenu from "./MembroMenu";
 import "./profile-menu-style.css";
 
 const ProfileMenu = () => {
 
     return (
-        <MenuH
+        <Menu
+            tabIndex={9999}
+            
             menuButton={
                 <IconButton type="button">
                     <UserPhoto />
@@ -20,7 +22,7 @@ const ProfileMenu = () => {
         >
             <MenuHeader>Perfil</MenuHeader>
             <MembroMenu />
-        </MenuH>
+        </Menu>
     );
 };
 

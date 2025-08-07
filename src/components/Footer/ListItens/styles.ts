@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerListItens = styled.div`
-  width: 20%;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -10,18 +10,21 @@ export const ContainerListItens = styled.div`
 
 export const ListItensUl = styled.ul`
   width: 100%;
-  padding: 0;
-  margin-left: 1.5rem;
+
+  
 
   li {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 5px;
     color: ${({ theme }) => theme.card.text};
-    width: 50%;
     &:hover {
       cursor: pointer;
       border-bottom: 1px solid
         ${({ theme }) => theme.mainColors.secondary};
     }
+  }
+
+  li::marker {
+color: ${({theme}) => theme.mainColors.text};
   }
 `;

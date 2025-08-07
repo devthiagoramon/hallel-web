@@ -3,54 +3,55 @@ import { type CSSProperties } from "styled-components";
 import { ButtonHContainer } from "./style";
 
 interface ButtonHProps {
-    mode:
+  mode:
     | "primary"
     | "secondary"
     | "ligthSecondary"
     | "success"
-    | "error";
-    startIcon?: ReactNode;
-    endIcon?: ReactNode;
-    children: string | (ReactNode & Element);
-    containerProps?: HTMLProps<HTMLDivElement>;
-    buttonProps?: React.DetailedHTMLProps<
-        React.ButtonHTMLAttributes<HTMLButtonElement>,
-        HTMLButtonElement
-    >;
-    buttonStyle?: CSSProperties;
-    containerStyle?: CSSProperties;
-    disabled?: boolean;
+    | "error"
+    | "transparent";
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
+  children: string | (ReactNode & Element);
+  containerProps?: HTMLProps<HTMLDivElement>;
+  buttonProps?: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
+  buttonStyle?: CSSProperties;
+  containerStyle?: CSSProperties;
+  disabled?: boolean;
 }
 
 const ButtonH = ({
-    buttonStyle,
-    containerStyle,
-    mode,
-    endIcon,
-    startIcon,
-    children,
-    buttonProps,
-    containerProps,
-    disabled,
+  buttonStyle,
+  containerStyle,
+  mode,
+  endIcon,
+  startIcon,
+  children,
+  buttonProps,
+  containerProps,
+  disabled,
 }: ButtonHProps) => {
-    return (
-        <ButtonHContainer
-            style={containerStyle}
-            $mode={mode}
-            $disabled={disabled}
-            {...containerProps}
-        >
-            {startIcon}
-            <button
-                disabled={disabled}
-                style={buttonStyle}
-                {...buttonProps}
-            >
-                {children}
-            </button>
-            {endIcon}
-        </ButtonHContainer>
-    );
+  return (
+    <ButtonHContainer
+      style={containerStyle}
+      $mode={mode}
+      $disabled={disabled}
+      {...containerProps}
+    >
+      {startIcon}
+      <button
+        disabled={disabled}
+        style={buttonStyle}
+        {...buttonProps}
+      >
+        {children}
+      </button>
+      {endIcon}
+    </ButtonHContainer>
+  );
 };
 
 export default ButtonH;

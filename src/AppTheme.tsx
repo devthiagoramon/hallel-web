@@ -3,20 +3,21 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
     mainColors: {
-        principal: "#033117",
-        secondary: "#42A5F5",
-        text: "#252525",
-        title: "rgba(3, 49, 23, 0.9)",
-        background: "#F7F9F9",
+        principal: "#008C4F",
+        secondary: "#F57D18",
+        text: "#343A40",
+        title: "#343A40",
+        background: "#F8F9FA",
         backgroundGrey: "#F5F5F5",
         error: "#F44336",
         secondaryLigth: "#E3F2FD",
         success: "#66BB6A",
         whiteText: "#FAFAFA",
+        border: "#CED4DA"
     },
     card: {
-        background: "#06612E",
-        text: "#FAFAFA",
+        background: "#FFD54F",
+        text: "#FFFFFF",
         button: "#E3F2FD",
         header: "#005123"
     },

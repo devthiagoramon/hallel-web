@@ -5,18 +5,17 @@ import {
   IconButton,
   Tooltip,
 } from "@mui/material";
-import { getUserInfosByTokenService, signUpService } from "@/api/main/mainAPI";
+import {
+  getUserInfosByTokenService,
+  signUpService,
+} from "@/api/main/mainAPI";
 import ButtonH from "@/components/ButtonH";
 import LinkH from "@/components/LinkH";
 import TextFieldH from "@/components/TextFieldH";
 import TextFieldIconH from "@/components/TextFieldH/TextFieldIconH";
 import TitleH from "@/components/TitleH";
 import { useSnackbar } from "notistack";
-import {
-  FormContainer,
-  LogoContainer,
-  SignContainer,
-} from "@/pages/SignIn/style";
+import { FormContainer, SignContainer } from "@/pages/SignIn/style";
 import { Eye, EyeSlash, House } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -27,6 +26,8 @@ import type { SignUpDTO } from "@/types/dtoTypes";
 import { saveTokenAPI } from "@/utils/mainUtils";
 import * as yup from "yup";
 import HallelLogoHD from "../../assets/logoHallelHD.png";
+import { H1, H3, Label, Text } from "@/Typografies";
+import DividerWithText from "@/components/DividerWIthText/DividerWithText";
 
 const schema = yup
   .object({
@@ -64,13 +65,19 @@ const SignUp = () => {
     try {
       const response = await signUpService(data);
       saveTokenAPI(response.accessToken);
-      const responseUser = await getUserInfosByTokenService(response.accessToken);
+      const responseUser = await getUserInfosByTokenService(
+        response.accessToken,
+      );
       dispatch(saveUserInfoRedux(responseUser));
-      enqueueSnackbar("Login realizado com sucesso!", {variant: "success"})
+      enqueueSnackbar("Login realizado com sucesso!", {
+        variant: "success",
+      });
       navigator("/");
     } catch (error: any) {
       console.error("Can't sing up");
-      enqueueSnackbar("Não foi possivel entrar, tente novamente!", { variant: "error" });
+      enqueueSnackbar("Não foi possivel entrar, tente novamente!", {
+        variant: "error",
+      });
     }
   };
 
@@ -82,28 +89,22 @@ const SignUp = () => {
 
   return (
     <SignContainer>
-      <Tooltip title="Inicio">
-        <IconButton onClick={handleGoBack} className="go_back">
-          <House size={32} />
-        </IconButton>
-      </Tooltip>
-      <LogoContainer>
-        <img src={HallelLogoHD} alt="Logo Hallel" />
-      </LogoContainer>
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
-        <TitleH size="large" color="white">
-          Login
-        </TitleH>
+        <H1>Login</H1>
+        <H3>Bem vindo de volta</H3>
+        <DividerWithText text="Entre com as suas informações" />
         <main>
           <TextFieldH
             inputProps={{
               ...register("email"),
             }}
-            type="outlined"
+            type="contained"
             label="E-mail: "
           />
           <TextFieldIconH
-            inputContainerStyle={{ borderColor: "#FAFAFA" }}
+            inputContainerStyle={{
+              borderColor: "${({theme}) => theme.mainColors.border}",
+            }}
             endIcon={
               showPassword ? (
                 <EyeSlash onClick={handleShowPassword} size={24} />
@@ -111,7 +112,7 @@ const SignUp = () => {
                 <Eye onClick={handleShowPassword} size={24} />
               )
             }
-            type="outlined"
+            type="contained"
             label="Senha"
             inputProps={{
               ...register("password"),
@@ -119,28 +120,15 @@ const SignUp = () => {
             }}
           />
           <section>
-            <FormControlLabel
-              control={<Checkbox sx={{ color: "#FAFAFA" }} />}
-              label="Lembre-me"
-            />
-            <LinkH to="/">Esqueceu a senha?</LinkH>
+            <div className="rigth">
+              <Label>Esqueceu a senha?</Label>
+            </div>
           </section>
-          <ButtonH
-            containerStyle={{
-              width: "80%",
-              justifySelf: "center",
-              marginTop: "2rem",
-            }}
-            buttonProps={{ type: "submit" }}
-            mode="success"
-          >
-            Continuar
-          </ButtonH>
         </main>
         <footer>
-          <LinkH textStyle={{ justifySelf: "center" }} to="/signIn">
-            Não possui conta? Acesse aqui
-          </LinkH>
+          <ButtonH mode="success">Entrar</ButtonH>
+          <ButtonH mode="transparent" buttonProps={{type: "button", onClick: () => navigator("/")}}  >Voltar</ButtonH> 
+          <Text>Não possui uma conta? <span>Cadastre-se aqui</span></Text>
         </footer>
       </FormContainer>
     </SignContainer>

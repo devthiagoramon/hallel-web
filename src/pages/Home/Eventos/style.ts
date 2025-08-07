@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const EventosContainer = styled.main`
   display: grid;
   width: 100%;
-  height: 100%;
   grid-template-columns: 100%;
-  grid-template-rows: 175px 100%;
+  grid-template-rows: auto;
 `;
 
 export const HeaderEventosContainer = styled.header`
@@ -92,8 +91,7 @@ export const RigthHeaderEventosContainer = styled.section`
 export const BodyEventosContainer = styled.div`
   padding: 0 30px 30px 30px;
   margin-top: 30px;
-  background-color: ${(props) => props.theme.mainColors.backgroundGrey};
-  min-height: 60vh;
+  background-color: ${(props) => props.theme.mainColors.background};
 
   width: 96%;
   display: grid;

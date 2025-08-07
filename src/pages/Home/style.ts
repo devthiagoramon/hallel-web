@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
   padding: 2rem;
-  width: 97vw;
+  width: 100%;
   height: 100%;
 `;
 
 export const WelcomeCardContainer = styled.div`
   position: relative;
-  width: 93%;
+  width: 100%;
+  overflow: hidden;
   background-color: rgba(3, 49, 23, 0.1);
   box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -24,7 +25,7 @@ export const WelcomeCardContainer = styled.div`
     grid-template-columns: 1;
     row-gap: 1rem;
     width: 90%;
-    height: 600px;
+    height: 300px;
   }
 `;
 
@@ -42,17 +43,22 @@ export const WelcomeCardBannerContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 50%;
-  position: relative;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
 
   img {
     position: absolute;
     justify-self: flex-end;
     width: 100%;
+    overflow: hidden;
   }
 
   @media (max-width: 1024px) {
     width: 100%;
-    display: flex;
+    display: none;
     img {
       width: 100%;
       position: relative;

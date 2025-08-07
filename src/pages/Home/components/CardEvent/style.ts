@@ -6,6 +6,7 @@ export const CardEventContainer = styled.div`
   padding: 0.5rem;
   position: relative;
   border-radius: 1rem;
+  overflow: hidden;
 
   img {
     border: 1px solid rgba(0, 0, 0, 0.2);

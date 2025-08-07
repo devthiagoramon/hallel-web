@@ -14,10 +14,12 @@ import { useNavigate } from "react-router-dom";
 import type { SignInDTO } from "@/types/dtoTypes";
 import * as yup from "yup";
 import HallelLogoHD from "../../assets/logoHallelHD.png";
-import { FormContainer, LogoContainer, SignContainer } from "./style";
+import { FormContainer, SignContainer } from "./style";
 import { saveTokenAPI } from "@/utils/mainUtils";
 import { saveUserInfoRedux } from "@/store/userSlice";
 import { useDispatch } from "react-redux";
+import { H1, H3, Label, Text } from "@/Typografies";
+import DividerWithText from "@/components/DividerWIthText/DividerWithText";
 
 const schema = yup.object({
   name: yup.string().required("Digite o seu nome!").trim(),
@@ -75,35 +77,29 @@ const SignIn = () => {
 
   return (
     <SignContainer>
-      <Tooltip title="Voltar">
-        <IconButton onClick={handleGoBack} className="go_back">
-          <CaretLeft size={32} />
-        </IconButton>
-      </Tooltip>
-      <LogoContainer>
-        <img src={HallelLogoHD} alt="Logo Hallel" />
-      </LogoContainer>
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
-        <TitleH size="large" color="white">
-          Cadastro
-        </TitleH>
+        <H1>Cadastrar</H1>
+        <H3>Crie a sua conta</H3>
+        <DividerWithText text="Cadastre as suas informações" />
         <main>
           <TextFieldH
             inputProps={{
               ...register("name"),
             }}
-            type="outlined"
+            type="contained"
             label="Nome: "
           />
           <TextFieldH
             inputProps={{
               ...register("email"),
             }}
-            type="outlined"
+            type="contained"
             label="E-mail: "
           />
           <TextFieldIconH
-            inputContainerStyle={{ borderColor: "#FAFAFA" }}
+            inputContainerStyle={{
+              borderColor: "${({theme}) => theme.mainColors.border}",
+            }}
             endIcon={
               showPassword ? (
                 <EyeSlash onClick={handleShowPassword} size={24} />
@@ -111,52 +107,40 @@ const SignIn = () => {
                 <Eye onClick={handleShowPassword} size={24} />
               )
             }
-            type="outlined"
-            label="Senha"
+            type="contained"
+            label="Senha: "
             inputProps={{
               ...register("password"),
-              type: showPassword ? "text" : "password"
+              type: showPassword ? "text" : "password",
             }}
           />
           <TextFieldIconH
-            inputContainerStyle={{ borderColor: "#FAFAFA" }}
+            inputContainerStyle={{
+              borderColor: "${({theme}) => theme.mainColors.border}",
+            }}
             endIcon={
               showPassword ? (
-                <EyeSlash onClick={handleShowConfirmPassword} size={24} />
+                <EyeSlash onClick={handleShowPassword} size={24} />
               ) : (
-                <Eye onClick={handleShowConfirmPassword} size={24} />
+                <Eye onClick={handleShowPassword} size={24} />
               )
             }
-            type="outlined"
-            label="Confirmar senha"
+            type="contained"
+            label="Confirmar senha: "
             inputProps={{
               ...register("confirmPassword"),
-              type: showConfirmPassword ? "text" : "password"
+              type: showPassword ? "text" : "password",
             }}
           />
-          {/* <section>
-            <FormControlLabel control={<Checkbox sx={{color: "#FAFAFA"}}/>} label="Lembre-me"/>
-            <LinkH to='/'>Esqueceu a senha?</LinkH>
-          </section> */}
-          <ButtonH
-            containerStyle={{
-              width: "80%",
-              justifySelf: "center",
-              marginTop: "2rem",
-            }}
-            buttonProps={{ type: "submit" }}
-            mode="success"
-          >
-            Continuar
-          </ButtonH>
+          <section>
+            <div className="rigth">
+              <Label>Esqueceu a senha?</Label>
+            </div>
+          </section>
         </main>
         <footer>
-          <label>
-            * Ao continuar, você aceita nossos{" "}
-            <LinkH to="/">
-              Termos de condições e Política de privacidade.
-            </LinkH>
-          </label>
+          <ButtonH mode="success">Criar conta</ButtonH>
+          <ButtonH mode="transparent" buttonProps={{type: "button", onClick: () => navigator("/")}}  >Voltar</ButtonH> 
         </footer>
       </FormContainer>
     </SignContainer>

@@ -8,17 +8,18 @@ export const ButtonHContainer = styled.div<{
     | "secondary"
     | "ligthSecondary"
     | "success"
-    | "error";
+    | "error"
+    | "transparent";
   $disabled?: boolean;
 }>`
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 150px;
-  min-height: 35px;
+  min-height: 48px;
   max-height: 50px;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 2px;
+  width: 100%;
   background-color: ${(props) => {
     if (props.$disabled) return "#EBEBE4";
     switch (props.$mode) {
@@ -32,8 +33,11 @@ export const ButtonHContainer = styled.div<{
         return props.theme.mainColors.error;
       case "success":
         return props.theme.mainColors.success;
+      case "transparent":
+        return "transparent";
     }
   }};
+  border: 1px solid ${({ theme }) => theme.mainColors.border};
 
   button {
     width: 100%;

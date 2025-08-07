@@ -4,7 +4,7 @@ export const ContainerFooter = styled.footer`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100vw;
+  width: 100%;
   background-color: ${({ theme }) => theme.mainColors.principal};
   flex-direction: column;
   margin-top: 20px;
@@ -12,7 +12,7 @@ export const ContainerFooter = styled.footer`
 
 export const ContainerPartOne = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 20%) 40%;
+  grid-template-columns: 20% 20% 20% 40%;
   grid-template-rows: 100%;
   justify-content: flex-start;
   align-items: flex-start;
@@ -74,10 +74,10 @@ export const ContainerLastMessage = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border-top: 1px solid #6a737b;
+  border-top: 1px solid ${({theme}) => theme.mainColors.border};
 
   p {
-    color: #6a737b;
+    color: ${({theme}) => theme.mainColors.whiteText};
     font-size: 20px;
   }
 `;
