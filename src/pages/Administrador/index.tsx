@@ -5,47 +5,53 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CardDashboardADM from "./components/CardDashboardADM";
 import {
-    BodyDashBoardAdmContainer,
-    DashboardAdmContainer,
-    HeaderDashBoardAdmContainer,
+  BodyDashBoardAdmContainer,
+  DashboardAdmContainer,
+  HeaderDashBoardAdmContainer,
 } from "./style";
+import { validateTokenAdmin } from "@/api/main/mainAPI";
+import { loadTokenAPI } from "@/utils/mainUtils";
 
 const Administrador = () => {
-    const navigation = useNavigate();
-    useEffect(() => {
-        async function verifyTokenADM() {
-            try {
-                const members = await listMembrosAdmService();
-            } catch (error) {
-                navigation("/administrador/signup");
-            }
+  const navigation = useNavigate();
+  useEffect(() => {
+    async function verifyTokenADM() {
+      try {
+        if (!loadTokenAPI()) return;
+        const isValid = await validateTokenAdmin(loadTokenAPI()!);
+        if (!isValid) {
+          navigation("/administrador/signup");
         }
-        verifyTokenADM();
-    }, []);
+      } catch (error) {
+        navigation("/administrador/signup");
+      }
+    }
+    verifyTokenADM();
+  }, []);
 
-    return (
-        <DashboardAdmContainer>
-            <HeaderDashBoardAdmContainer>
-                <TitleH color="black" size="medium">
-                    Bem-vindo ao administrativo da Hallel
-                </TitleH>
-            </HeaderDashBoardAdmContainer>
-            <BodyDashBoardAdmContainer>
-                {admRoutesObj.map((route, index) => {
-                    if (index === 0) {
-                        return false;
-                    }
-                    return (
-                        <CardDashboardADM
-                            description={route.description || ""}
-                            link={route.link}
-                            title={route.title}
-                        />
-                    );
-                })}
-            </BodyDashBoardAdmContainer>
-        </DashboardAdmContainer>
-    );
+  return (
+    <DashboardAdmContainer>
+      <HeaderDashBoardAdmContainer>
+        <TitleH color="black" size="medium">
+          Bem-vindo ao administrativo da Hallel
+        </TitleH>
+      </HeaderDashBoardAdmContainer>
+      <BodyDashBoardAdmContainer>
+        {admRoutesObj.map((route, index) => {
+          if (index === 0) {
+            return false;
+          }
+          return (
+            <CardDashboardADM
+              description={route.description || ""}
+              link={route.link}
+              title={route.title}
+            />
+          );
+        })}
+      </BodyDashBoardAdmContainer>
+    </DashboardAdmContainer>
+  );
 };
 
 export default Administrador;

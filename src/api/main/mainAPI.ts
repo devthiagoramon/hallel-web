@@ -1,4 +1,5 @@
 import api from "@/api/api";
+import type { VerificationTokenAdminResponse } from "@/types/admDTOTypes";
 import type { SignInDTO, SignUpDTO, UserProfileInfos } from "@/types/dtoTypes";
 import { loadTokenAPI } from "@/utils/mainUtils";
 
@@ -34,6 +35,16 @@ export const signUpService = async (dto: SignUpDTO) => {
   }
 };
 
+export const verifyAdminSituationService = async (token: string):Promise<VerificationTokenAdminResponse> => {
+  try {
+    const response = await api.get(`/auth/verify-admin-access-web/${token}`);
+    return response.data;
+  } catch (error:any) {
+    console.log(error);
+    throw new Error(error.description);
+  }
+}
+
 export const isTokenExpiredService = async () => {
   try {
     const token = loadTokenAPI();
@@ -51,3 +62,13 @@ export const isTokenExpiredService = async () => {
     return false;
   }
 };
+
+export const validateTokenAdmin = async (token: string) => {
+  try {
+    const response = await api.get(`/auth/validate-token-admin?token=${token}`);
+    return response.data;
+  } catch (error:any) {
+    console.log(error);
+    throw new Error(error.description);
+  }
+}

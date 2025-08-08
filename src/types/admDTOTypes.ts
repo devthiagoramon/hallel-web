@@ -177,3 +177,8 @@ export interface MinisterioAdmDTOV2 {
   hasMusic?: boolean;
   hasDance?: boolean;
 }
+
+export interface VerificationTokenAdminResponse {
+  tokenAdmin: string,
+  code: string
+}

@@ -19,3 +19,15 @@ export const FormSignUpContainer = styled.form`
   background-color: ${(props) =>
     props.theme.mainColors.backgroundGrey};
 `;
+
+export const SignUpAdministratorVerification = styled.div`
+  padding: 1.875rem;
+  border-radius: 0.5rem;
+  width: 40%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+`

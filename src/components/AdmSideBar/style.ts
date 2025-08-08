@@ -3,15 +3,18 @@ import styled from "styled-components";
 export const AdmSideBarContainer = styled.section<{
   $expanded?: boolean;
 }>`
-  display: grid;
+  display: flex;
   position: fixed;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 23vw;
   max-width: 23vw;
+
   min-height: 100vh;
   height: 100%;
-  grid-template-rows: repeat(6, 120px);
   background-color: ${(props) => props.theme.mainColors.principal};
-  place-items: center start;
+  align-items: center;
+  overflow: hidden;
 
   @media (max-width: 1152px) {
     h4 {
@@ -45,7 +48,7 @@ export const AdmSideBarContainer = styled.section<{
   }
 
   .list-items {
-    height: 100%;
+    min-height: 100%;
     width: 90%;
   }
 `;

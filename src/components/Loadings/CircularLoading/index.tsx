@@ -1,5 +1,4 @@
 import { Box, CircularProgress, circularProgressClasses, type CircularProgressProps } from "@mui/material"
-import { ContainerCircularProgress } from "./styled"
 
 interface Props{
     size: number
@@ -7,7 +6,7 @@ interface Props{
 
 const CircularLoading = (props: CircularProgressProps) => {
     return (
-        <ContainerCircularProgress>
+        
 
             <Box sx={{ position: 'relative' }}>
                 <CircularProgress
@@ -27,7 +26,7 @@ const CircularLoading = (props: CircularProgressProps) => {
                     {...props}
                 />
             </Box>
-        </ContainerCircularProgress>
+        
     )
 }
 
