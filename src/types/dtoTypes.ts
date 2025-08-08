@@ -14,7 +14,11 @@ export interface SignUpDTO {
 }
 
 export interface EditProfileDTO extends ReduxUser {
-  image?: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  dateBirth: string;
+  cpf: string;
 }
 
 export interface ListEventsDTO {

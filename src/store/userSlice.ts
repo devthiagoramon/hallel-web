@@ -19,19 +19,19 @@ const userSlice = createSlice({
       const {
         email,
         id,
-        nome,
-        image,
+        name,
+        fileImageUrl,
         cpf,
-        dataNascimento,
-        telefone,
+        dateBirth,
+        phoneNumber,
       } = action.payload;
       state.email = email;
       state.id = id;
-      state.name = nome;
-      state.fileImageUrl = image;
+      state.name = name;
+      state.fileImageUrl = fileImageUrl;
       state.cpf = cpf;
-      state.dateBirth = dataNascimento;
-      state.phoneNumber = telefone;
+      state.dateBirth = dateBirth;
+      state.phoneNumber = phoneNumber;
     },
     editUserPhotoRedux(state, action) {
       state.fileImageUrl = action.payload;

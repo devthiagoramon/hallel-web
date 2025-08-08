@@ -1,9 +1,11 @@
+
 export const saveTokenAPI = (token: string) => {
   localStorage.setItem("apiToken", token);
 };
 
 export const loadTokenAPI = () => {
   const token = localStorage.getItem("apiToken");
+
   return token;
 };
 

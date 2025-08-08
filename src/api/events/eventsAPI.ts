@@ -17,11 +17,7 @@ export const listEventsService = async (): Promise<
   ListEventsDTO[] | undefined
 > => {
   try {
-    const response = await api.get("/public/event/list-all/title/asc", {
-      headers: {
-        Authorization: loadTokenAPI(),
-      },
-    });
+    const response = await api.get("/public/event/list-all/title/asc");
     return response.data;
   } catch (error) {
     console.error("Can' get the events from API");
@@ -32,11 +28,7 @@ export const getDetailsEvent = async (
   id: string,
 ): Promise<EventDTO | undefined> => {
   try {
-    const response = await api.get(`/eventos/${id}`, {
-      headers: {
-        Authorization: loadTokenAPI(),
-      },
-    });
+    const response = await api.get(`/eventos/${id}`);
 
     return response.data;
   } catch (error) {

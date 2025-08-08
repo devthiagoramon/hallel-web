@@ -1,7 +1,7 @@
+import { selectUserPhoto } from "@/store/userSlice";
 import { Avatar } from "@mui/material";
 import { UserCircle } from "phosphor-react";
 import { useSelector } from "react-redux";
-import { selectUserPhoto } from "@/store/userSlice";
 import { type CSSProperties } from "styled-components";
 
 interface UserPhotoProps {
@@ -15,7 +15,7 @@ const UserPhoto = ({ photoStyle, size, iconColor }: UserPhotoProps) => {
 
     if (photo === "") {
         return (
-            <UserCircle size={size || 60} style={photoStyle} color={iconColor || "#252525"} />
+            <UserCircle size={size || 60} style={photoStyle} color={iconColor || "#343A40"} />
         );
     } else {
         return (

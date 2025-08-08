@@ -105,6 +105,7 @@ export const ContainerItens = styled.div`
   column-gap: 1rem;
   align-items: center;
   height: 100%;
+  position: relative;
 
   @media (max-width: 768px) {
     & {
@@ -125,8 +126,7 @@ export const ButtonTittle = styled.button`
   background-color: #ffffff;
   border: none;
   padding: 0.5rem 1.75rem;
-  border: solid 1px rgba(0, 0, 0, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
+  border: solid 1px ${({theme}) => theme.mainColors.border};
   display: flex;
   align-items: center;
   border-radius: 24px;

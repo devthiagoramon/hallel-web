@@ -12,9 +12,7 @@ export const listMinisterioAdmService = async (): Promise<
   ListMinisterioDTO[] | undefined
 > => {
   try {
-    const response = await api.get("/administrador/ministerio", {
-      headers: { Authorization: loadTokenAPI() },
-    });
+    const response = await api.get("/administrador/ministerio");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -29,11 +27,7 @@ export const addMinisterioAdmService = async (
     const response = await api.post(
       "/administrador/ministerio",
       dto,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+     
     );
     return response.data;
   } catch (error) {
@@ -47,12 +41,7 @@ export const addMinisterioV2AdmService = async (dto: FormData) => {
     const response = await api.post(
       "/administrador/ministerio/v2/create",
       dto,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-          "Content-Type": "multipart/form-data",
-        },
-      },
+      
     );
     return response.data;
   } catch (error) {
@@ -69,11 +58,7 @@ export const editarMinisterioAdmService = async (
     const response = await api.put(
       `/administrador/ministerio/${idMinisterio}/edit`,
       dto,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+      
     );
     return response.data;
   } catch (error) {
@@ -89,12 +74,7 @@ export const editarMinisterioV2AdmService = async (
     const response = await api.put(
       `/administrador/ministerio/${idMinisterio}/v2/edit`,
       dto,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-          "Content-Type": "multipart/form-data",
-        },
-      },
+
     );
     return response.data;
   } catch (error) {
@@ -108,11 +88,7 @@ export const listMinisterioByIdAdmService = async (
   try {
     const response = await api.get(
       `/administrador/ministerio/${idMinisterio}`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+     
     );
     return response.data;
   } catch (error) {
@@ -127,11 +103,7 @@ export const listMinisterioByIdV2AdmService = async (
   try {
     const response = await api.get(
       `/administrador/ministerio/v2/${idMinisterio}`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+     
     );
     return response.data;
   } catch (error) {
@@ -146,11 +118,7 @@ export const listMembrosMinisteriosAdmService = async (
   try {
     const response = await api.get(
       `/membros/ministerio/coordenador/membroMinisterio/list/${idMinisterio}`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+    
     );
     return response.data;
   } catch (error) {
@@ -165,11 +133,7 @@ export const deleteMinisterioAdmService = async (
   try {
     const response = await api.delete(
       `/administrador/ministerio/${idMinisterio}`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+     
     );
     return response.data;
   } catch (error) {

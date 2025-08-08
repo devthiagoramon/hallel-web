@@ -1,8 +1,8 @@
 import TitleH from "@/components/TitleH";
 import UserPhoto from "@/components/UserPhoto";
+import { selectUser } from "@/store/userSlice";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectUser } from "@/store/userSlice";
 import PersonalInfos from "./PersonalInfos";
 import {
     ItemListProfile,
@@ -23,6 +23,7 @@ const Profile = () => {
         "Sorteios",
         "Sair",
     ];
+
     const [selectedItemIndex, setSelectedItemIndex] =
         useState<number>(0);
 
@@ -32,7 +33,7 @@ const Profile = () => {
             <LeftProfContainer>
                 <UserPhoto
                     photoStyle={{ marginTop: "1.875rem" }}
-                    iconColor="#252525"
+                    iconColor="#343A40"
                     size={250}
                 />
                 <TitleH size="short" color="black">

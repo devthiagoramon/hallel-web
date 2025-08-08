@@ -6,7 +6,8 @@ export const ProfileContainer = styled.div`
   width: 90%;
   grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
-  border: 1px ${(props) => props.theme.mainColors.text} solid;
+  border: 1px ${(props) => props.theme.mainColors.border} solid;
+  border-radius: 0.5rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -73,7 +74,7 @@ export const ItemListProfile = styled.li<{ $selected?: boolean }>`
 export const RightProfContainer = styled.section`
   width: 100%;
   height: 100%;
-  border: 1px ${(props) => props.theme.mainColors.text} solid;
+  border-left: 1px ${(props) => props.theme.mainColors.border} solid;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 105px auto;
@@ -85,6 +86,6 @@ export const TitleContainerRightProfCont = styled.header`
   align-items: center;
   justify-content: center;
   max-height: 105px;
-  border-bottom: 1px ${(props) => props.theme.mainColors.text} solid;
+  border-bottom: 1px ${(props) => props.theme.mainColors.border} solid;
   height: 100%;
 `;

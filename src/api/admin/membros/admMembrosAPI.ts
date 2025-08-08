@@ -9,11 +9,7 @@ export const listMembrosAdmService = async (
   try {
     const response = await api.get(
       `/administrador/membros?page=${page || 0}&size=${size || 20}`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+      
     );
     return response.data;
   } catch (error) {

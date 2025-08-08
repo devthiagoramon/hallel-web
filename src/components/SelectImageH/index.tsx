@@ -3,6 +3,7 @@ import { ImageSquare } from "phosphor-react";
 import { type Dispatch, type HTMLProps, type SetStateAction, useRef } from "react";
 import { type CSSProperties } from "styled-components";
 import { SelectImageHContainer } from "./style";
+import { Label } from "@/Typografies";
 
 interface SelectImageH extends HTMLProps<HTMLInputElement> {
     setSelectedImage: Dispatch<
@@ -43,7 +44,7 @@ const SelectImageH = ({
                 type="file"
                 {...props}
             />
-            <label>Selecionar imagem</label>
+            <Label>Selecionar imagem</Label>
             <hr />
             <ImageSquare
                 size={24}

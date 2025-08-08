@@ -1,16 +1,10 @@
 import api from "@/api/api";
 import type { EditProfileDTO } from "@/types/dtoTypes";
-import { loadTokenAPI } from "@/utils/mainUtils";
 
 export const getMembroInfoService = async (token: string | null) => {
   try {
     const response = await api(
       `/public/user/profile/token/${token}`,
-      {
-        headers: {
-          Authorization: token,
-        },
-      },
     );
     return response.data;
   } catch (error) {
@@ -21,9 +15,33 @@ export const getMembroInfoService = async (token: string | null) => {
 
 export const editMembroInfoService = async (dto: EditProfileDTO) => {
   try {
-    const response = await api.patch("/membros/perfil", dto, {
-      headers: { Authorization: loadTokenAPI() },
-    });
+    const response = await api.put(
+      `/user/edit-profile/${dto.id}`,
+      dto,
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Can't edit membro info");
+  }
+};
+
+export const editMembroProfilePicture = async (
+  userId: string,
+  file: File,
+) => {
+  try {
+    const data = new FormData();
+    data.append("file", file);
+    const response = await api.patch(
+      `/user/edit-profile/image/${userId}`,
+      data,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      },
+    );
     return response.data;
   } catch (error) {
     console.error(error);

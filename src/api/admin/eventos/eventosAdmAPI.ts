@@ -6,11 +6,7 @@ export const listEventsAscAdmService = async (): Promise<
   ListEventsAdmDTO[] | undefined
 > => {
   try {
-    const response = await api.get("/public/event/list-all/title/asc", {
-      headers: {
-        Authorization: loadTokenAPI(),
-      },
-    });
+    const response = await api.get("/public/event/list-all/title/asc");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -22,13 +18,7 @@ export const adicionarEventAdmService = async (data: FormData) => {
   try {
     const response = await api.post(
       "/admin/event/create",
-      data,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-          "Content-Type": "multipart/form-data",
-        },
-      },
+      data
     );
     return response.data;
   } catch (error) {
@@ -43,13 +33,7 @@ export const editarEventAdmService = async (
   try {
     const response = await api.patch(
       `/admin/event/edit/${idEvento}`,
-      dto,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-          "Content-Type": "multipart/form-data",
-        },
-      },
+      dto
     );
     return response.data;
   } catch (error) {
@@ -63,12 +47,7 @@ export const listEventByIdAdmService = async (
 ): Promise<ListEventsAdmDTO | undefined> => {
   try {
     const response = await api.get(
-      `/administrador/eventos/${idEvento}/list`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
+      `/administrador/eventos/${idEvento}/list`
     );
     return response.data;
   } catch (error) {
@@ -81,11 +60,6 @@ export const deleteEventAdmService = async (idEvento: string) => {
   try {
     const response = await api.delete(
       `/administrador/eventos/${idEvento}/delete`,
-      {
-        headers: {
-          Authorization: loadTokenAPI(),
-        },
-      },
     );
     return response.data;
   } catch (error) {

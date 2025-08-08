@@ -10,9 +10,9 @@ export const WelcomeCardContainer = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: rgba(3, 49, 23, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: ${({theme}) => theme.mainColors.secondary};
+  /* box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px; */
+  border: 1px solid ${({theme}) => theme.mainColors.border};
   margin-top: 0.5rem;
   border-radius: 1rem;
   height: 300px;
